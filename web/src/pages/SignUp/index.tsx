@@ -26,7 +26,7 @@ const SignUp: React.FC = () => {
           .min(6, 'No mínimo 6 digitos'),
       })
 
-      await schema.validate(schema, { abortEarly: false })
+      await schema.validate(data, { abortEarly: false })
     } catch (err) {
       const errors = getValidationErrors(err)
       formRef.current?.setErrors(errors)
