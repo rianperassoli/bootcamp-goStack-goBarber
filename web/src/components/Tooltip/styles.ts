@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Container = styled.div`
   position: relative;
@@ -17,7 +17,7 @@ export const Container = styled.div`
     position: absolute;
     bottom: calc(100% + 12px);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-45%);
     color: #312e38;
 
     &::before {
