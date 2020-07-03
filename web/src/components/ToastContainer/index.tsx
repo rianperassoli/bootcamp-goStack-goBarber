@@ -14,9 +14,10 @@ const ToastContainer: React.FC<ToastContainerProps> = ({ messages }) => {
     messages,
     message => message.id, // deve ser o valor da key do componente Controlado(Toast)
     {
-      from: { right: '-120%' },
-      enter: { right: '0%' },
-      leave: { right: '-120%' },
+      // pode ser adicionada qlquer css
+      from: { right: '-120%', opacity: 0 },
+      enter: { right: '0%', opacity: 1 },
+      leave: { right: '-120%', opacity: 0 },
     },
   )
 
