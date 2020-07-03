@@ -29,11 +29,17 @@
         "prettier"
     ],
     "rules": {
-      "prettier/prettier": "error",
+      "prettier/prettier": ["error", { "semi": false }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
+      "semi": [2, "never"],
+      "@typescript-eslint/camelcase": "off",
+      "camelcase": "off",
+      "@typescript-eslint/explicit-function-return-type":[
+        "error",{ "allowExpressions": true }
+      ],
       "import/extensions": [
         "error",
         "ignorePackages",
