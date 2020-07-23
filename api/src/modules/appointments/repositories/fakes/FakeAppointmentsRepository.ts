@@ -3,9 +3,9 @@ import { isEqual, getMonth, getYear, getDate } from "date-fns"
 
 import IAppointmentRepository from "@modules/appointments/repositories/IAppointmentsRepository"
 import ICreateAppointmentDTO from "@modules/appointments/dtos/ICreateAppointmentDTO"
-import Appointment from "@modules/appointments/entities/Appointment"
 import IFindAllInMonthFromProviderDTO from "@modules/appointments/dtos/IFindAllInMonthFromProviderDTO"
 import IFindAllInDayFromProviderDTO from "@modules/appointments/dtos/IFindAllInDayFromProviderDTO"
+import Appointment from "@modules/appointments/infra/typeorm/entities/Appointment"
 
 class FakeAppointmentsRepository implements IAppointmentRepository {
   private appointments: Appointment[] = []
@@ -52,11 +52,12 @@ class FakeAppointmentsRepository implements IAppointmentRepository {
 
   public async create({
     provider_id,
+    user_id,
     date,
   }: ICreateAppointmentDTO): Promise<Appointment> {
     const appointment = new Appointment()
 
-    Object.assign(appointment, { id: uuid(), date, provider_id })
+    Object.assign(appointment, { id: uuid(), date, provider_id, user_id })
 
     this.appointments.push(appointment)
 
