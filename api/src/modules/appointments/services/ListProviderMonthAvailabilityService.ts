@@ -1,4 +1,4 @@
-import { inject, injectable } from "tsyringe"
+import { injectable, inject } from "tsyringe"
 import { getDaysInMonth, getDate } from "date-fns"
 import IAppointmentsRepository from "../repositories/IAppointmentsRepository"
 
@@ -14,7 +14,7 @@ type IResponseDTO = Array<{
 }>
 
 @injectable()
-class ListProviderMonthAvailabillityService {
+class ListProviderMonthAvailabilityService {
   constructor(
     @inject("AppointmentsRepository")
     private appointmentsRepository: IAppointmentsRepository
@@ -51,4 +51,4 @@ class ListProviderMonthAvailabillityService {
   }
 }
 
-export default ListProviderMonthAvailabillityService
+export default ListProviderMonthAvailabilityService
